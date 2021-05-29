@@ -3,43 +3,48 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using MySql.Data.MySqlClient;
+using StudentApi.Modals.Commands;
 
 [ApiController]
 [Route("student")]
 public class StudentController : ControllerBase
-{
-    MySqlConnection connection =null;
-    MySqlCommand mySqlCommand = null;
-
-    public StudentController(IConfiguration configuration)
+{   
+    private StudentSQLCommands studentSQLCommands;
+    
+    [HttpPost]
+    [Route("/createStudent")]
+    public Student createStudent(Student student)
     {
-        connection = new MySqlConnection(configuration.GetSection("ConnectionStrings").GetSection("Default").Value);
+        
+        return null;
     }
+
     [HttpGet]
-    [Route("/getAll/students")]
-    public async Task<List<Student>> getAllStudents()
+    [Route("/get/all/students")]
+    public Student getAllStudents(Student student)
+    {   
+        
+        return null;
+    }
+
+    [HttpPost]
+    [Route("/get/student/{studentID}")]
+    public Student getStudent(Student student)
     {
-         await connection.OpenAsync();
         return null;
     }
     [HttpPost]
     [Route("/deleteStudent/{studentID}")]
-    public async Task delete(string studentID)
+    public Student delete(Student student)
     {
-          await connection.OpenAsync();
-
+        return null;
     }
+    
     [HttpPost]
-    [Route("/createStudent")]
-    public async Task createStudent(string studentName,string studentEmail,string studentNumber,string subject,string studentDetails)
+    [Route("/editStudent/{studentID}")]
+    public Student edit(Student student)
     {
-        await connection.OpenAsync();
-    }
-    [HttpPost]
-    [Route("/edit/{studentID}")]
-    public async Task edit(string studentID)
-    {
-        await connection.OpenAsync();
+        return null;
     }
 
 
