@@ -13,10 +13,10 @@ namespace StudentApi.Migrations
                 {
                     studentID = table.Column<int>(type: "int", nullable: false)
                         .Annotation("MySQL:ValueGenerationStrategy", MySQLValueGenerationStrategy.IdentityColumn),
-                    studentName = table.Column<string>(type: "text", nullable: true),
+                    studentName = table.Column<string>(type: "text", nullable: false),
                     studentEmail = table.Column<string>(type: "text", nullable: true),
-                    studentNumber = table.Column<string>(type: "text", nullable: true),
-                    subject = table.Column<string>(type: "text", nullable: true),
+                    studentNumber = table.Column<string>(type: "text", nullable: false),
+                    subject = table.Column<string>(type: "text", nullable: false),
                     studentDetails = table.Column<string>(type: "text", nullable: true)
                 },
                 constraints: table =>

@@ -29,12 +29,15 @@ namespace StudentApi.Migrations
                         .HasColumnType("text");
 
                     b.Property<string>("studentName")
+                        .IsRequired()
                         .HasColumnType("text");
 
                     b.Property<string>("studentNumber")
+                        .IsRequired()
                         .HasColumnType("text");
 
                     b.Property<string>("subject")
+                        .IsRequired()
                         .HasColumnType("text");
 
                     b.HasKey("studentID");

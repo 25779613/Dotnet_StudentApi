@@ -8,7 +8,7 @@ using StudentApi.Modals.Context;
 namespace StudentApi.Migrations
 {
     [DbContext(typeof(StudentContext))]
-    [Migration("20210529150637_InitialCreate")]
+    [Migration("20210529170249_InitialCreate")]
     partial class InitialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -31,12 +31,15 @@ namespace StudentApi.Migrations
                         .HasColumnType("text");
 
                     b.Property<string>("studentName")
+                        .IsRequired()
                         .HasColumnType("text");
 
                     b.Property<string>("studentNumber")
+                        .IsRequired()
                         .HasColumnType("text");
 
                     b.Property<string>("subject")
+                        .IsRequired()
                         .HasColumnType("text");
 
                     b.HasKey("studentID");
