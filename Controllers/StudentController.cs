@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
@@ -15,7 +16,12 @@ public class StudentController : ControllerBase
     [Route("/createStudent")]
     public Student createStudent(Student student)
     {
-        
+        string studentName = student.studentName;
+        string studentEmail = student.studentEmail;
+        string studentNumber = student.studentNumber;
+        string subject = student.subject;
+        string studentDetails = student.studentDetails;
+        Console.WriteLine(studentName);
         return null;
     }
 
