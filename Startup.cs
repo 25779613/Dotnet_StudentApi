@@ -40,6 +40,7 @@ namespace StudentApi
             services.AddControllers();
             services.AddTransient<MySqlConnection>(_=>new MySqlConnection(config));
             services.AddDbContext<StudentContext>(options => options.UseMySQL(config));
+            
             services.AddAuthentication(options=>{
                 options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
                 options.DefaultScheme =JwtBearerDefaults.AuthenticationScheme;//if first fails
@@ -55,7 +56,7 @@ namespace StudentApi
                     ValidateIssuer =false,
                     ValidateAudience = false,
                     ValidateLifetime = true,
-                    RequireExpirationTime = false
+                    RequireExpirationTime = false //should be true in real app
                 };
             });
 
