@@ -28,7 +28,6 @@ C:\Users\SALMAN\source\repos\StudentApi\obj\Debug\net5.0\ref\StudentApi.dll
 C:\Users\SALMAN\source\repos\StudentApi\obj\Debug\net5.0\StudentApi.pdb
 C:\Users\SALMAN\source\repos\StudentApi\obj\Debug\net5.0\StudentApi.genruntimeconfig.cache
 C:\Users\SALMAN\Desktop\Dotnet_API_prac\StudentApi\bin\Debug\net5.0\appsettings.Development.json
-C:\Users\SALMAN\Desktop\Dotnet_API_prac\StudentApi\bin\Debug\net5.0\appsettings.json
 C:\Users\SALMAN\Desktop\Dotnet_API_prac\StudentApi\bin\Debug\net5.0\StudentApi.exe
 C:\Users\SALMAN\Desktop\Dotnet_API_prac\StudentApi\bin\Debug\net5.0\StudentApi.deps.json
 C:\Users\SALMAN\Desktop\Dotnet_API_prac\StudentApi\bin\Debug\net5.0\StudentApi.runtimeconfig.json
@@ -67,7 +66,6 @@ C:\Users\SALMAN\Desktop\Dotnet_API_prac\StudentApi\bin\Debug\net5.0\System.Confi
 C:\Users\SALMAN\Desktop\Dotnet_API_prac\StudentApi\bin\Debug\net5.0\System.Diagnostics.DiagnosticSource.dll
 C:\Users\SALMAN\Desktop\Dotnet_API_prac\StudentApi\bin\Debug\net5.0\System.Security.Cryptography.ProtectedData.dll
 C:\Users\SALMAN\Desktop\Dotnet_API_prac\StudentApi\bin\Debug\net5.0\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
-C:\Users\SALMAN\Desktop\Dotnet_API_prac\StudentApi\obj\Debug\net5.0\StudentApi.csprojAssemblyReference.cache
 C:\Users\SALMAN\Desktop\Dotnet_API_prac\StudentApi\obj\Debug\net5.0\StudentApi.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\SALMAN\Desktop\Dotnet_API_prac\StudentApi\obj\Debug\net5.0\StudentApi.AssemblyInfoInputs.cache
 C:\Users\SALMAN\Desktop\Dotnet_API_prac\StudentApi\obj\Debug\net5.0\StudentApi.AssemblyInfo.cs
@@ -83,3 +81,21 @@ C:\Users\SALMAN\Desktop\Dotnet_API_prac\StudentApi\obj\Debug\net5.0\StudentApi.d
 C:\Users\SALMAN\Desktop\Dotnet_API_prac\StudentApi\obj\Debug\net5.0\ref\StudentApi.dll
 C:\Users\SALMAN\Desktop\Dotnet_API_prac\StudentApi\obj\Debug\net5.0\StudentApi.pdb
 C:\Users\SALMAN\Desktop\Dotnet_API_prac\StudentApi\obj\Debug\net5.0\StudentApi.genruntimeconfig.cache
+C:\Users\SALMAN\Desktop\Dotnet_API_prac\StudentApi\obj\Debug\net5.0\StudentApi.csproj.AssemblyReference.cache
+C:\Users\SALMAN\Desktop\Dotnet_API_prac\StudentApi\bin\Debug\net5.0\StudentApi.StaticWebAssets.xml
+C:\Users\SALMAN\Desktop\Dotnet_API_prac\StudentApi\bin\Debug\net5.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:\Users\SALMAN\Desktop\Dotnet_API_prac\StudentApi\bin\Debug\net5.0\Microsoft.AspNetCore.Cryptography.Internal.dll
+C:\Users\SALMAN\Desktop\Dotnet_API_prac\StudentApi\bin\Debug\net5.0\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
+C:\Users\SALMAN\Desktop\Dotnet_API_prac\StudentApi\bin\Debug\net5.0\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
+C:\Users\SALMAN\Desktop\Dotnet_API_prac\StudentApi\bin\Debug\net5.0\Microsoft.AspNetCore.Identity.UI.Views.V4.dll
+C:\Users\SALMAN\Desktop\Dotnet_API_prac\StudentApi\bin\Debug\net5.0\Microsoft.AspNetCore.Identity.UI.dll
+C:\Users\SALMAN\Desktop\Dotnet_API_prac\StudentApi\bin\Debug\net5.0\Microsoft.Extensions.FileProviders.Embedded.dll
+C:\Users\SALMAN\Desktop\Dotnet_API_prac\StudentApi\bin\Debug\net5.0\Microsoft.Extensions.Identity.Core.dll
+C:\Users\SALMAN\Desktop\Dotnet_API_prac\StudentApi\bin\Debug\net5.0\Microsoft.Extensions.Identity.Stores.dll
+C:\Users\SALMAN\Desktop\Dotnet_API_prac\StudentApi\bin\Debug\net5.0\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\Users\SALMAN\Desktop\Dotnet_API_prac\StudentApi\bin\Debug\net5.0\Microsoft.IdentityModel.Logging.dll
+C:\Users\SALMAN\Desktop\Dotnet_API_prac\StudentApi\bin\Debug\net5.0\Microsoft.IdentityModel.Protocols.dll
+C:\Users\SALMAN\Desktop\Dotnet_API_prac\StudentApi\bin\Debug\net5.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+C:\Users\SALMAN\Desktop\Dotnet_API_prac\StudentApi\bin\Debug\net5.0\Microsoft.IdentityModel.Tokens.dll
+C:\Users\SALMAN\Desktop\Dotnet_API_prac\StudentApi\bin\Debug\net5.0\System.IdentityModel.Tokens.Jwt.dll
+C:\Users\SALMAN\Desktop\Dotnet_API_prac\StudentApi\bin\Debug\net5.0\appsettings.json
