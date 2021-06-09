@@ -4,6 +4,8 @@ using System.Data;
 using System.Data.Common;
 using System.Net;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using MySql.Data.MySqlClient;
@@ -11,6 +13,7 @@ using StudentApi.Modals.Commands;
 
 [ApiController]
 [Route("student")]
+[Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
 public class StudentController : ControllerBase
 {
     private StudentSQLCommands studentSQLCommands;

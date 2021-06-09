@@ -28,7 +28,7 @@ namespace StudentApi.Controllers
         private readonly UserManager<IdentityUser> _userManager;
         private readonly JwtConfig _jwtConfig;
 
-        public AuthManagementController(UserManager<IdentityUser> userManager,IOptionsMonitor<JwtConfig>  optionsMonitor)
+        public AuthManagementController(UserManager<IdentityUser> userManager, IOptionsMonitor<JwtConfig> optionsMonitor)
         {
             _userManager = userManager;
             _jwtConfig = optionsMonitor.CurrentValue;
@@ -36,36 +36,47 @@ namespace StudentApi.Controllers
 
         [HttpPost]
         [Route("/Register")]
-        public async Task<IActionResult> Register([FromBody] UserRegistrationDto user){
+        public async Task<IActionResult> Register([FromBody] UserRegistrationDto user)
+        {
 
-            if(ModelState.IsValid)
+            if (ModelState.IsValid)
             {
                 var existingUser = await _userManager.FindByEmailAsync(user.Email);
-                if(existingUser!= null)
+                if (existingUser != null)
                 {
-                     return BadRequest(new RegistrationResponse(){
+                    return BadRequest(new RegistrationResponse()
+                    {
                         Errors = new List<string>(){
                        "Email already in use "
                      },
-                    TokenSuccess = false
+                        TokenSuccess = false
                     });
                 }
-                var newUser = new IdentityUser() { Email = user.Email,UserName = user.Email};
+                var newUser = new IdentityUser() { Email = user.Email, UserName = user.Email };
                 var isCreated = await _userManager.CreateAsync(newUser, user.Password);
-                if(isCreated.Succeeded)
+                if (isCreated.Succeeded)
                 {
-                    
+                    var jwtToken = GenerateJwtToken(newUser);
+
+                    return Ok(new RegistrationResponse()
+                    {
+                        TokenSuccess = true,
+                        Token = jwtToken
+                    });
                 }
-                else{
-                     return BadRequest(new RegistrationResponse(){
-                    Errors = isCreated.Errors.Select(x => x.Description).ToList(),
-                    TokenSuccess = false
-                 });
+                else
+                {
+                    return BadRequest(new RegistrationResponse()
+                    {
+                        Errors = isCreated.Errors.Select(x => x.Description).ToList(),
+                        TokenSuccess = false
+                    });
                 }
 
             }
 
-            return BadRequest(new RegistrationResponse(){
+            return BadRequest(new RegistrationResponse()
+            {
                 Errors = new List<string>(){
                     "Invalid payload"
                 },
@@ -73,6 +84,53 @@ namespace StudentApi.Controllers
             });
         }
 
+        [HttpPost]
+        [Route("/login")]
+        public async Task<IActionResult> Login([FromBody] UserLoginRequest user)
+        {
+            if (ModelState.IsValid)
+            {
+                var existingUser = await _userManager.FindByEmailAsync(user.Email);
+
+                if (existingUser == null)
+                {
+                    return BadRequest(new RegistrationResponse()
+                    {
+                        Errors = new List<string>(){
+                    "Invalid login request"
+                     },
+                        TokenSuccess = false
+                    });
+
+                }
+
+                var isCorrect = await _userManager.CheckPasswordAsync(existingUser, user.Password);
+                if (!isCorrect)
+                {
+                    return BadRequest(new RegistrationResponse()
+                    {
+                        Errors = new List<string>(){
+                    "Invalid login request"
+                },
+                        TokenSuccess = false
+                    });
+                }
+
+                var jwtToken = GenerateJwtToken(existingUser);
+                
+                return Ok(new RegistrationResponse(){
+                    TokenSuccess = true,
+                    Token = jwtToken
+                });
+            }
+            return BadRequest(new RegistrationResponse()
+            {
+                Errors = new List<string>(){
+                    "Invalid payload"
+                },
+                TokenSuccess = false
+            });
+        }
         private string GenerateJwtToken(IdentityUser user)
         {
             var jwtTokenHandler = new JwtSecurityTokenHandler();
@@ -88,7 +146,7 @@ namespace StudentApi.Controllers
                     new Claim(JwtRegisteredClaimNames.Sub, user.Email),
                     new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString())//
 
-                }),  
+                }),
                 Expires = DateTime.UtcNow.AddHours(6),
                 SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(key), SecurityAlgorithms.HmacSha256Signature)
             };
